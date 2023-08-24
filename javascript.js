@@ -9,11 +9,7 @@ const freelancers = [
     { name: "Dr. Wire", price: 47, occupation: "teacher" },
     { name: "Prof. Goose", price: 72, occupation: "driver" },
   ];
-  const body = document.querySelector("body");
-  const header = document.createElement("h1");
-  header.textContent = "Freelancer Forum"
-  body.append(header);
-  
+
 
 function nameArr (objIn){
   let arrOfNames = [];  
@@ -57,11 +53,18 @@ function avgPrice (numArray){
 }
 //console.log(avgPrice(arrPrices));
 
-const avgHead = document.querySelector('.avgPrice');
+const body = document.querySelector("body");
 
-function render(){
-  const avgHTML = avgPrice(arrPrices).map(function(num){
-    return `<div>${num}</div>`;
-  });
-}
+const header = document.createElement("h1");
+header.textContent = "Freelancer Forum"
+body.append(header);
 
+const avgHead = document.createElement("div");
+avgHead.textContent = "The average price is: $" + avgPrice(arrPrices);
+body.append(avgHead);
+
+const tableHead = document.createElement("h2");
+tableHead.textContent = "Available Freelancers";
+body.append(tableHead);
+
+const freeTable = document.createElement("table");
