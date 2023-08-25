@@ -57,35 +57,36 @@ function avgPrice (numArray){
 }
 //console.log(avgPrice(arrPrices));
 
-function nameLoop (arrNames){
-  let nameStr = "";
-  for(i = 0; i < arrNames.length; i++) {
-      nameStr = arrNames[i];
-      i++;
+// NOT SURE HOW TO CHANGE BELOW TO WORK
+// function nameLoop (arrNames){
+//   let nameStr = "";
+//   for(i = 0; i < arrNames.length; i++) {
+//       nameStr = arrNames[i];
+//       i++;
       
-  }
-    return nameStr;
-}
+//   }
+//     return nameStr;
+// }
 
-function occLoop (arrOccs){
-  let occStr = "";
-  for(i = 0; i < arrOccs.length; i++) {
-      occStr = arrOccs[i];
-      i++;
+// function occLoop (arrOccs){
+//   let occStr = "";
+//   for(i = 0; i < arrOccs.length; i++) {
+//       occStr = arrOccs[i];
+//       i++;
       
-  }
-    return occStr;
-}
+//   }
+//     return occStr;
+// }
 
-function priceLoop (arrPrices){
-  let priceStr = "";
-  for(i = 0; i < arrPrices.length; i++) {
-      priceStr = arrPrices[i];
-      i++;
+// function priceLoop (arrPrices){
+//   let priceStr = "";
+//   for(i = 0; i < arrPrices.length; i++) {
+//       priceStr = arrPrices[i];
+//       i++;
       
-  }
-    return priceStr;
-}
+//   }
+//     return priceStr;
+// }
 
 const body = document.querySelector("body");
 
@@ -106,7 +107,7 @@ nameHead.textContent = "Name";
 body.append(nameHead);
 
 const nameList = document.createElement("ul");
-nameList.textContent = nameLoop(arrNames);
+nameList.textContent = arrNames;
 body.append(nameList);
 
 const occHead = document.createElement("h3");
@@ -114,7 +115,7 @@ occHead.textContent = "Job";
 body.append(occHead);
 
 const occList = document.createElement("ul");
-occList.textContent = occLoop(arrOccs);
+occList.textContent = arrOccs;
 body.append(occList);
 
 const priceHead = document.createElement("h3");
@@ -122,5 +123,5 @@ priceHead.textContent = "Price";
 body.append(priceHead);
 
 const priceList = document.createElement("ul");
-priceList.textContent = "$" + priceLoop(arrPrices);
+priceList.textContent = "$" + arrPrices;
 body.append(priceList);
