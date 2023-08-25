@@ -18,6 +18,8 @@ function nameArr (objIn){
   }
   return arrOfNames;
 }
+
+const arrNames = nameArr(freelancers);
 //console.log(nameArr(freelancers));
 
 function priceArr (objIn){
@@ -37,6 +39,8 @@ function occArr (objIn){
   }
   return arrOfOccs;
 }
+
+const arrOccs = occArr(freelancers);
 //console.log(occArr(freelancers));
 
 
@@ -53,6 +57,36 @@ function avgPrice (numArray){
 }
 //console.log(avgPrice(arrPrices));
 
+function nameLoop (arrNames){
+  let nameStr = "";
+  for(i = 0; i < arrNames.length; i++) {
+      nameStr = arrNames[i];
+      i++;
+      
+  }
+    return nameStr;
+}
+
+function occLoop (arrOccs){
+  let occStr = "";
+  for(i = 0; i < arrOccs.length; i++) {
+      occStr = arrOccs[i];
+      i++;
+      
+  }
+    return occStr;
+}
+
+function priceLoop (arrPrices){
+  let priceStr = "";
+  for(i = 0; i < arrPrices.length; i++) {
+      priceStr = arrPrices[i];
+      i++;
+      
+  }
+    return priceStr;
+}
+
 const body = document.querySelector("body");
 
 const header = document.createElement("h1");
@@ -67,4 +101,26 @@ const tableHead = document.createElement("h2");
 tableHead.textContent = "Available Freelancers";
 body.append(tableHead);
 
-const freeTable = document.createElement("table");
+const nameHead = document.createElement("h3");
+nameHead.textContent = "Name";
+body.append(nameHead);
+
+const nameList = document.createElement("ul");
+nameList.textContent = nameLoop(arrNames);
+body.append(nameList);
+
+const occHead = document.createElement("h3");
+occHead.textContent = "Job";
+body.append(occHead);
+
+const occList = document.createElement("ul");
+occList.textContent = occLoop(arrOccs);
+body.append(occList);
+
+const priceHead = document.createElement("h3");
+priceHead.textContent = "Price";
+body.append(priceHead);
+
+const priceList = document.createElement("ul");
+priceList.textContent = "$" + priceLoop(arrPrices);
+body.append(priceList);
